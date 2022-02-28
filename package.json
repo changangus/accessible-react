@@ -1,0 +1,21 @@
+{
+  "name": "accessible-react",
+  "version": "1.0.0",
+  "description": "A reusable react component library for building accessible web applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.2",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@rollup/plugin-typescript": "^8.3.1",
+    "@types/react": "^17.0.39",
+    "react": "^17.0.2",
+    "rollup": "^2.68.0",
+    "rollup-plugin-dts": "^4.1.0",
+    "typescript": "^4.5.5"
+  }
+}
