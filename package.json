@@ -1,12 +1,11 @@
 {
   "name": "accessible-react",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A reusable react component library for building accessible web applications",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "rollup": "rollup -c"
   },
-  "author": "",
+  "author": "Angus Chang",
   "license": "ISC",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.2",
@@ -17,5 +16,11 @@
     "rollup": "^2.68.0",
     "rollup-plugin-dts": "^4.1.0",
     "typescript": "^4.5.5"
-  }
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts"
 }
