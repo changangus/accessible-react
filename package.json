@@ -1,5 +1,5 @@
 {
-  "name": "accessible-react",
+  "name": "@changangus/accessible-react",
   "version": "0.0.1",
   "description": "A reusable react component library for building accessible web applications",
   "scripts": {
@@ -22,5 +22,8 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/changangus"
+  }
 }
