@@ -2,6 +2,7 @@ import { IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import './Icon.css';
+import '../global.css';
 
 interface IconProps {
   iconType: IconPrefix,
