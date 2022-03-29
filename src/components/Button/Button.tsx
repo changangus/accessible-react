@@ -1,12 +1,31 @@
+import { IconName } from '@fortawesome/fontawesome-svg-core';
+import { faL } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
+import Icon from '../Icon/Icon';
 import './Button.css';
 
 export interface ButtonProps {
-  label: string;
+  ariaLabel?: string;
+  onClick: () => void;
+  disabled?: boolean;
+  buttonRef?: () => void;
+  type?: 'submit' | 'button' | 'reset';
 }
 
-const Button: React.FC<ButtonProps> = ({ label }) => {
-    return <button>{label}</button>;
+const Button: React.FC<ButtonProps> = ({ children, ariaLabel, onClick, disabled, buttonRef, type }) => {
+    return (
+      <button 
+        aria-label={ariaLabel}
+        disabled={disabled ? true : false}
+        onClick={onClick}
+        type={type}
+        ref={buttonRef}
+        >
+        <span>
+          { children }
+        </span>
+      </button>
+    )
 }
 
 export default Button;
