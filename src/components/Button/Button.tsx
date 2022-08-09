@@ -1,7 +1,4 @@
-import { IconName } from '@fortawesome/fontawesome-svg-core';
-import { faL } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
-import Icon from '../Icon/Icon';
 import './Button.css';
 
 export interface ButtonProps {
