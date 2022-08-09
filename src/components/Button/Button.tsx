@@ -3,7 +3,7 @@ import './Button.css';
 
 export interface ButtonProps {
   ariaLabel?: string;
-  onClick: () => void;
+  onClick?: () => void;
   disabled?: boolean;
   buttonRef?: () => void;
   type?: 'submit' | 'button' | 'reset';
