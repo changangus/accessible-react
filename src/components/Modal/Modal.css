@@ -1,4 +1,4 @@
-.container {
+.modal-container {
   backdrop-filter: blur(4px);
   z-index: 999;
   position: absolute;
@@ -12,7 +12,7 @@
   transition: 0.5s;
 }
 
-.content {
+.modal-content {
   width: 80%;
   height: 80%;
   background-color: #F5F5F5;
