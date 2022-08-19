@@ -68,12 +68,12 @@ const Modal: React.FC<ModalProps> = ({ children, title, containerClassName, cont
   const modalContainer = () => {
     return createPortal(
       <aside 
-        className={ `${containerClassName} modal-container` } 
+        className={ `${containerClassName ? containerClassName : ''} modal-container` } 
         role="dialog" 
         aria-modal="true"
         >
         <div 
-          className={ `${contentClassName} modal-content` }
+          className={ `${contentClassName ? contentClassName : ''} modal-content` }
           onClick={() => null }
           ref={modalRef}
           >
