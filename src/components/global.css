@@ -8,3 +8,10 @@
   padding: 0;
   position: absolute;
 }
+
+:root {
+  --color-primary: #25A0CA;
+  --color-secondary: #0f0;
+  --color-tertiary: #00f;
+  --color-box-shadow: #E8E8E8;
+}
