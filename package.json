@@ -59,5 +59,8 @@
   "types": "dist/index.d.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/changangus"
+  },
+  "dependencies": {
+    "react-jss": "^10.9.2"
   }
 }

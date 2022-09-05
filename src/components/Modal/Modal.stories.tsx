@@ -15,12 +15,16 @@ export default {
 const Template: ComponentStory<typeof Modal> = (args) => { 
   return (
     <React.Fragment>
-      <Modal {...args}>
-        Modal
-        <a href="">Link</a>
-        <button>World</button>
-      </Modal>
-      <button>Hello</button> 
+      <div style={{width: '250px', height: '100px'}} >
+        <Modal {...args}>
+          Modal
+          <a href="">Link</a>
+          <button>World</button>
+        </Modal>
+      </div>
+      <div >
+        <button>Hello</button>
+      </div>
     </React.Fragment>
   ) 
  };

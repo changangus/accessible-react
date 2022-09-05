@@ -78,9 +78,11 @@ const Modal: React.FC<ModalProps> = ({ children, title, containerClassName, cont
           ref={modalRef}
           >
           { children }
-          <Button 
-            onClick={() => setIsModalVisible(false)}
-          >Close</Button>
+          <div style={{width: '250px', height: '60px'}} >
+            <Button 
+              onClick={() => setIsModalVisible(false)}
+            >Close</Button>
+          </div>
         </div>  
       </aside>,
       document.body
@@ -88,10 +90,10 @@ const Modal: React.FC<ModalProps> = ({ children, title, containerClassName, cont
   }
 
   return (
-    <React.Fragment>
+    <>
       <Button onClick={() => setIsModalVisible(true)}>{ title }</Button>
       {isModalVisible && modalContainer()}
-    </React.Fragment>
+    </>
   )
 }
 
