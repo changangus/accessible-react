@@ -7,7 +7,6 @@ export interface AccordianProps {
 
 const Accordian: React.FC<AccordianProps> = ({ title, children }) => {
     const [isOpen, setIsOpen] = useState(false); 
-    console.log(isOpen);
     return (
       <section className="accordian">
         <div>
