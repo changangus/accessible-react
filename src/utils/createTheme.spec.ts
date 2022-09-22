@@ -3,8 +3,8 @@ import createTheme from './createTheme';
 describe('createTheme', () => {
   const defaultTheme = {
     colors: {
-      primary: "red",
-      secondary: "blue",
+      primary: "#3f51b5",
+      secondary: "#f50057",
     },
     fonts: {
       headingOne: "Arial",
