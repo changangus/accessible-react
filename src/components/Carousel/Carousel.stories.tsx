@@ -17,16 +17,13 @@ export default {
 const Template: ComponentStory<typeof Carousel> = (args) =>  {
   const theme = createTheme({
     colors: {
-      primary: '#ff0000',
-      secondary: '#00ff00',
+      primary: '#FFF',
+      secondary: '#000',
     }
   });
   return (
     <ThemeProvider theme={theme}>
-      <div style={{
-        width: '200px',
-       height: '100px',
-      }}>
+      <div>
         <Carousel {...args}>Carousel</Carousel>
       </div> 
     </ThemeProvider>
@@ -40,9 +37,27 @@ Primary.args = {
   carouselItems: [
     {
       title: 'Item 1',
+      image: {
+        src: 'https://unsplash.com/photos/DlkF4-dbCOU',
+        alt: 'Item 1',
+      },
+      body: <p>Item 1 body</p>
     },
     {
       title: 'Item 2',
+      image: {
+        src: 'https://unsplash.com/photos/DlkF4-dbCOU',
+        alt: 'Item 2',
+      },
+      body: <p>Item 2 body</p>
+    },
+    {
+      title: 'Item 3',
+      image: {
+        src: 'https://unsplash.com/photos/DlkF4-dbCOU',
+        alt: 'Item 3',
+      },
+      body: <p>Item 3 body</p>
     },
   ],
 };
