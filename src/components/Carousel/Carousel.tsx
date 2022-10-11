@@ -36,10 +36,33 @@ const Carousel: React.FC<CarouselProps> = ({
       width: "200px",
       backgroundColor: theme.colors.primary,
       margin: "0.5rem",
-    }
+    },
+    visuallyHidden: {
+      position: "absolute",
+      width: "1px",
+      height: "1px",
+      padding: "0",
+      margin: "-1px",
+      overflow: "hidden",
+      clip: "rect(0, 0, 0, 0)",
+      whiteSpace: "nowrap",
+      border: "0",
+    },
   }));
 
   const classes = useStyles();
+
+  const [currentItemIdx, setCurrentItemIdx] = React.useState(0);
+
+  const handleNext = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    currentItemIdx >= carouselItems.length - 1 ? setCurrentItemIdx(0) : setCurrentItemIdx(currentItemIdx + 1);
+  };
+
+  const handlePrev = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    currentItemIdx <= 0 ? setCurrentItemIdx(carouselItems.length - 1) : setCurrentItemIdx(currentItemIdx - 1);
+  };
 
   return (
     <section
@@ -51,27 +74,40 @@ const Carousel: React.FC<CarouselProps> = ({
         {carouselHeading}
       </h2>
       <div className={classes.cardContainer}>
-        {carouselItems.map((item) => (
-          <div className={classes.card}>
-            <h3>{item.title}</h3>
-            <img src={item.image.src} alt={item.image.alt} />
-            <div className="carousel__card-body">{item.body}</div>
-          </div>
-        ))}
+        <div 
+          className={classes.visuallyHidden}
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          {carouselItems[currentItemIdx].title}
+        </div>
+        <h3>{carouselItems[currentItemIdx].title}</h3>
+        <img
+          src={carouselItems[currentItemIdx].image.src}
+          alt={carouselItems[currentItemIdx].image.alt}
+          />
+        {carouselItems[currentItemIdx].body}
       </div>
-      <div className="carousel__controls">
+      <div>
         <button
-          className="carousel__control carousel__control--prev"
-          onClick={console.log}
+          onClick={handlePrev}
         >
           Previous
         </button>
         <button
-          className="carousel__control carousel__control--next"
-          onClick={console.log}
+          onClick={handleNext}
         >
           Next
         </button>
+      </div>
+      <div>
+        {carouselItems.map((item, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrentItemIdx(idx)}
+            aria-label={`Go to ${item.title}, slide ${idx + 1} of ${carouselItems.length}`}
+            ></button>
+        ))}
       </div>
     </section>
   );
